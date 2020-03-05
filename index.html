@@ -135,14 +135,14 @@
 			$.getJSON("http://proto387.haaga-helia.fi/~a1704465/backend/fetchsearches.php", function(result){
 				$.each(result, function(i, field) {
 					$("#searchTable tbody").append("<tr><td>"
-													//+field.searchid
-													//+"</td><td>"
-													+field.startloc
-													+"</td><td>"	
-													+field.destloc
-													+"</td><td>"
-													+field.timestamp
-													+"</td></tr>");								
+						//+field.searchid
+						//+"</td><td>"
+						+field.startloc
+						+"</td><td>"
+						+field.destloc
+						+"</td><td>"
+						+field.timestamp
+						+"</td></tr>");
 				});
 			});
 		}	
@@ -157,16 +157,16 @@
 			};
 			var autocomplete = new google.maps.places.Autocomplete(input, options);
 			autocomplete.addListener('place_changed', function () {
-			var place = autocomplete.getPlace();
-			// place variable will have all the information you are looking for.
-			$('#lat').val(place.geometry['location'].lat());
-			$('#long').val(place.geometry['location'].lng());
-			//console.log(place.geometry['location'].lat(),place.geometry['location'].lng());
-			a = "" + place.geometry['location'].lat() + "," + place.geometry['location'].lng();
-			//console.log(a);
-			$("#destloc").val(a);
-			console.log("Destination set to:");
-			console.log(destloc);
+				var place = autocomplete.getPlace();
+				// place variable will have all the information you are looking for.
+				$('#lat').val(place.geometry['location'].lat());
+				$('#long').val(place.geometry['location'].lng());
+				//console.log(place.geometry['location'].lat(),place.geometry['location'].lng());
+				a = "" + place.geometry['location'].lat() + "," + place.geometry['location'].lng();
+				//console.log(a);
+				$("#destloc").val(a);
+				console.log("Destination set to:");
+				console.log(destloc);
 			});
 		}
 	</script>
